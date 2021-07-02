@@ -5,6 +5,9 @@ const app = express();
 //grab the express layouts package
 const expressLayouts = require('express-ejs-layouts');
 
+//require the Router that I added on routes/index.js
+const indexRouter = require('./routes/index.js')
+
 //set the view engine
 app.set('view engine', 'ejs');
 //set up the views and advise which directory 
@@ -15,6 +18,9 @@ app.set('layout', 'layouts/layout');
 app.use(expressLayouts);
 //tell express where public files are 
 app.use(express.static('public'))
+
+//call the reference to the Router 
+app.use('/', indexRouter);
 
 
 // set up the Port listener
