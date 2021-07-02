@@ -5,7 +5,7 @@ const router = express.Router();
 
 //set up a GET to pull the root '/' of the application
 router.get('/', (req, res) => {
-    res.send('hello world')
+    res.render('layouts/index')
 });
 
 
